@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Responsive Portfolio Website</title>
+    <link rel="stylesheet" href="styless.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <!--Navegaition Menu-->
+
+    <nav>
+      <div class="nav-container">
+        <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+          <span>Diogo</span>
+        </div>
+        <div class="links">
+          <div
+            class="links"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="100"
+          >
+            <a href="#home">Home</a>
+          </div>
+          <div
+            class="links"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="200"
+          >
+            <a href="#about">About</a>
+          </div>
+          <div
+            class="links"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="300"
+          >
+            <a href="#skills">Skills</a>
+          </div>
+          <div
+            class="links"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="400"
+          >
+            <a href="#services">Projects</a>
+          </div>
+          <div
+            class="links"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="500"
+          >
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+      </div>
+      <div class="dropdown">
+        <div class="links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#services">Projects</a>
+          <a href="#contact">Contact</a>
+          <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+        </div>
+      </div>
+    </nav>
+    <section>
+      <div class="main-container">
+        <div class="image" data-aos="zoom-out" data-aos-duration="3000">
+          <img src="main.jpeg" alt="" />
+        </div>
+        <div class="content">
+          <h1
+            data-aos="fade-left"
+            data-aos-duration="1500"
+            data-aos-delay="700"
+          >
+            Hey I'm
+            <span>Diogo</span>
+          </h1>
+          <div
+            class="typewriter"
+            data-aos="fade-right"
+            data-aos-duration="1500"
+            data-aos-delay="900"
+          >
+            I'm a
+            <span class="typewriter-text"></span>
+            <label for="">|</label>
+            <script src="script.js"></script>
+          </div>
+          <p
+            data-aos="flip-down"
+            data-aos-duration="1500"
+            data-aos-delay="1100"
+          >
+            Currently, I am in the fifth semester of the Computer Engineering
+            program at the Federal University of Technology - Paraná (UTFPR) and
+            have strong skills in programming, systems analysis, and
+            problem-solving.
+          </p>
+
+          <div class="social-links">
+            <a
+              href="https://github.com/DiogoSNs"
+              target="_blank"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-delay="1300"
+            >
+              <i class="fa-brands fa-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/diogo-nascimento-0378542ba/"
+              target="_blank"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-delay="1400"
+            >
+              <i class="fa-brands fa-linkedin"></i
+            ></a>
+          </div>
+          <div
+            class="btn"
+            data-aos="zoom-in"
+            data-aos-duration="1500"
+            data-aos-delay="1800"
+          >
+            <button>Hire Me</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+
+    <section class="about" id="about">
+      <div class="content">
+        <div class="title" data-aos="fade-up" data-aos-duration="1500">
+          <span>About Me</span>
+        </div>
+        <div class="about-details">
+          <div
+            class="left"
+            data-aos="fade-right"
+            data-aos-duration="1500"
+            data-aos-delay="200"
+          >
+            <img src="perfil.jpg" alt="" />
+          </div>
+          <div
+            class="right"
+            data-aos="fade-left"
+            data-aos-duration="1500"
+            data-aos-delay="200"
+          >
+            <div
+              class="topic"
+              data-aos="fade-left"
+              data-aos-duration="1500"
+              data-aos-delay="200"
+            >
+              Diogo Augusto Silvério Nascimento
+            </div>
+            <p
+              data-aos="flip-down"
+              data-aos-duration="1500"
+              data-aos-delay="300"
+            >
+              I am pursuing a degree in Computer Engineering at the Federal
+              University of Technology - Paraná (UTFPR). Throughout my academic
+              journey, I have participated in extension projects, applying
+              theoretical knowledge to practical situations, such as developing
+              a Chatbot for micro and small businesses, as well as teaching
+              basic programming and Arduino classes for the Dom Bosco Scout
+              Group. I hold certifications from Cisco Networking Academy in
+              Introduction to IoT, from Via Certa Professional Education in IT
+              and Technology, from Oracle Academy in the Java Fundamentals
+              course, and a certification in Responsive Web Design from
+              freeCodeCamp. My English proficiency is at an intermediate level.
+              I am seeking a professional opportunity that allows me to gain
+              hands-on experience in the field, enhance my expertise, and
+              contribute to my growth in the job market. Proactive and
+              collaborative by nature, I am committed to continuously improving
+              my technical and interpersonal skills. solutions.
+            </p>
+            <div
+              class="button"
+              data-aos="zoom-in-right"
+              data-aos-duration="1500"
+              data-aos-delay="400"
+            >
+              <button>Download CV</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Skills Section -->
+
+    <section class="skills" id="skills">
+      <div class="content">
+        <div class="title" data-aos="fade-up" data-aos-duration="1200">
+          <span>My Skills</span>
+        </div>
+        <div class="skills-details">
+          <div class="text">
+            <div
+              class="topic"
+              data-aos="fade-right"
+              data-aos-duration="1200"
+              data-aos-delay="200"
+            >
+              Main Skills Applied in Projects
+            </div>
+            <p
+              data-aos="fade-right"
+              data-aos-duration="1200"
+              data-aos-delay="400"
+            >
+              Throughout my projects, I have honed my programming skills using
+              languages such as C, Java, and Python, and have managed databases
+              with SQL. My background in web development includes proficiency in
+              HTML, CSS, and JavaScript, while my hardware programming
+              experience extends to Arduino. I am currently broadening my
+              expertise by studying Node, React, and Docker.
+            </p>
+            <div
+              class="experience"
+              data-aos="fade-up"
+              data-aos-duration="1200"
+              data-aos-delay="600"
+            >
+              <div class="num">3</div>
+              <div class="exp">
+                Years Of <br />
+                Experience
+              </div>
+            </div>
+            <div class="technologies-grid">
+              <div class="tech-item">
+                <i class="fab fa-html5"></i>
+                <span>HTML</span>
+              </div>
+              <div class="tech-item" data-aos="fade-up" data-aos-delay="400">
+                <i class="fab fa-css3-alt"></i>
+                <span>CSS</span>
+              </div>
+              <div class="tech-item" data-aos="zoom-out" data-aos-delay="200">
+                <i class="fab fa-js"></i>
+                <span>JavaScript</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-python"></i>
+                <span>Python</span>
+              </div>
+              <div
+                class="tech-item"
+                data-aos="zoom-in-right"
+                data-aos-delay="600"
+              >
+                <i class="fab fa-react"></i>
+                <span>React</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-figma"></i>
+                <span>Figma</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-node-js"></i>
+                <span>Node.js</span>
+              </div>
+              <div class="tech-item" data-aos="fade-right" data-aos-delay="800">
+                <i class="fab fa-java"></i>
+                <span>Java</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-docker"></i>
+                <span>Docker</span>
+              </div>
+              <div class="tech-item" data-aos="fade-up" data-aos-delay="600">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </div>
+              <div class="tech-item" data-aos="zoom-out" data-aos-delay="1000">
+                <i class="fab fa-windows"></i>
+                <span>Windows</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-linux"></i>
+                <span>Linux</span>
+              </div>
+            </div>
+          </div>
+          <div class="boxes">
+            <div class="box">
+              <div
+                class="topic"
+                data-aos="fade-left"
+                data-aos-duration="1200"
+                data-aos-delay="150"
+              >
+                C
+              </div>
+              <div
+                class="per"
+                data-aos="zoom-in"
+                data-aos-duration="1200"
+                data-aos-delay="300"
+              >
+                80%
+              </div>
+            </div>
+            <div class="box">
+              <div
+                class="topic"
+                data-aos="fade-left"
+                data-aos-duration="1200"
+                data-aos-delay="150"
+              >
+                Python
+              </div>
+              <div
+                class="per"
+                data-aos="zoom-in"
+                data-aos-duration="1200"
+                data-aos-delay="300"
+              >
+                70%
+              </div>
+            </div>
+            <div class="box">
+              <div
+                class="topic"
+                data-aos="fade-left"
+                data-aos-duration="1200"
+                data-aos-delay="450"
+              >
+                HTML
+              </div>
+              <div
+                class="per"
+                data-aos="zoom-in"
+                data-aos-duration="1200"
+                data-aos-delay="600"
+              >
+                70%
+              </div>
+            </div>
+            <div class="box">
+              <div
+                class="topic"
+                data-aos="fade-left"
+                data-aos-duration="1200"
+                data-aos-delay="450"
+              >
+                CSS
+              </div>
+              <div
+                class="per"
+                data-aos="zoom-in"
+                data-aos-duration="1200"
+                data-aos-delay="600"
+              >
+                60%
+              </div>
+            </div>
+            <div class="box">
+              <div
+                class="topic"
+                data-aos="fade-left"
+                data-aos-duration="1200"
+                data-aos-delay="450"
+              >
+                SQL
+              </div>
+              <div
+                class="per"
+                data-aos="zoom-in"
+                data-aos-duration="1200"
+                data-aos-delay="600"
+              >
+                60%
+              </div>
+            </div>
+            <div class="box">
+              <div
+                class="topic"
+                data-aos="fade-left"
+                data-aos-duration="1200"
+                data-aos-delay="450"
+              >
+                Java
+              </div>
+              <div
+                class="per"
+                data-aos="zoom-in"
+                data-aos-duration="1200"
+                data-aos-delay="600"
+              >
+                50%
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Projects Secetion -->
+
+    <section class="services" id="services">
+      <div class="content">
+        <div class="title" data-aos="fade-up" data-aos-duration="1200">
+          <span>My Projects</span>
+        </div>
+        <div class="boxes">
+          <div
+            class="box"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="200"
+          >
+            <a
+              href="https://github.com/DiogoSNs/McDonald-s-Digital-Self-Order-Kiosk"
+              target="_blank"
+            >
+              <div class="icon">
+                <i class="fas fa-desktop"></i>
+              </div>
+              <div class="topic">Web Development</div></a
+            >
+            <p>FSW Donald's - Mobile Digital Self-Order Kiosk System</p>
+          </div>
+          
+          
+      </div>
+      <div class="boxes">
+        <div
+          class="box"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          data-aos-delay="200"
+        >
+          <a
+            href="https://github.com/DiogoSNs/Magic-Background-Remover-Pro"
+            target="_blank"
+          >
+            <div class="icon">
+              <i class="fas fa-camera-retro"></i>
+            </div>
+            <div class="topic">Python Desktop App</div></a
+          >
+          <p>Magic Background Remover Pro AI-Powered</p>
+        </div>
+      
+    </div>
+    </section>
+
+    <!-- Contact Me Section -->
+
+    <section class="contact" id="contact">
+      <div class="content">
+        <div class="title" data-aos="fade-up" data-aos-duration="1500">
+          <span>Contact Me</span>
+        </div>
+        <div class="text">
+          <div class="title reveal">
+            <h2 class="section-title">Contact Me</h2>
+          </div>
+          <div class="content">
+            <div
+              class="row"
+              data-aos="fade-left"
+              data-aos-duration="1500"
+              data-aos-delay="300"
+            >
+              <div class="card reveal">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info">
+                  <h3>Address</h3>
+                  <span>Apucarana - PR</span>
+                </div>
+              </div>
+              <div class="card reveal">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="info">
+                  <h3>Phone</h3>
+                  <span>+55 (18) 98181-9684</span>
+                </div>
+              </div>
+              <div class="card reveal">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info">
+                  <h3>Email Address</h3>
+                  <span>diogoaugustosilverio@gmail.com</span>
+                </div>
+              </div>
+            </div>
+            <div class="row"></div>
+          </div>
+          <p>
+            Feel free to reach out to me for any inquiries, collaborations, or
+            professional opportunities. I am always open to new challenges. You
+            can contact me via email or through my social media. I look forward
+            to hearing from you!
+          </p>
+          <div
+            class="button"
+            data-aos="zoom-in"
+            data-aos-duration="1500"
+            data-aos-delay="400"
+          >
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=diogoaugustosilverio@gmail.com&su=Assunto%20do%20E-mail&body=Olá,%20este%20é%20o%20corpo%20do%20e-mail."
+              target="_blank"
+            >
+              <button>Let's Chat</button></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+
+    <footer>
+      <div class="text">
+        <span
+          >Created By<a href="https://github.com/DiogoSNs" target="_blank">
+            DiogoSNs</a
+          >
+          | &#169; 2025 All Rights Reserved</span
+        >
+      </div>
+    </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ offset: 0 });
+    </script>
+
+    <script src="hamburger.js"></script>
+  </body>
+</html>
