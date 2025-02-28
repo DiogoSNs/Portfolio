@@ -66,7 +66,7 @@ open index.html # ou clique duplo no arquivo
 
 ## 🌐 Deploy
 O projeto está disponível online via GitHub Pages:
-[https://diogosns.github.io/portfolio](https://diogosns.github.io/portfolio)
+[https://diogosns.github.io/Portfolio/](https://diogosns.github.io/Portfolio/)
 
 ## 🤝 Como Contribuir
 1. Faça um Fork do projeto
