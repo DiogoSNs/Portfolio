@@ -1074,12 +1074,12 @@ section .button {
 
 footer {
   background: var(--primary);
-  padding: var(--spacing-lg) 0;
+  padding: 15px 0;
   text-align: center;
 }
 
 footer .text span {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 400;
   color: var(--text-primary);
 }
@@ -1113,7 +1113,7 @@ footer .text span a:hover {
   align-items: center;
   font-size: 1.5rem;
   border-radius: var(--radius-full);
-  box-shadow: var(--shadow-primary);
+  box-shadow: var(--black);
   transition: var(--transition-normal);
   z-index: 999;
   opacity: 0;
@@ -1297,7 +1297,15 @@ footer .text span a:hover {
   }
 
   .main-container .content {
-    width: 95%;
+    width: 100%;
+  }
+
+  .main-container .content h1 {
+    font-size: 2rem;
+  }
+
+  .main-container .content .typewriter {
+    font-size: 1.5rem;
   }
 
   .skills-details .boxes .per {
@@ -1305,12 +1313,17 @@ footer .text span a:hover {
   }
 
   .about .left img {
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 250px;
   }
 
   section .content {
     width: 95%;
+  }
+
+  /* Melhorias na seção Skills e Contact para mobile pequeno */
+  .skill-card-v2 {
+    width: 140px;
   }
 }
 
