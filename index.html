@@ -1,73 +1,106 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Responsive Portfolio Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>Diogo Nascimento - Computer Engineer & Developer</title>
+    <meta
+      name="description"
+      content="Portfolio de Diogo Nascimento, estudante de Engenharia de Computação na UTFPR. Desenvolvedor Full Stack com experiência em C, Java, Python, HTML, CSS e JavaScript."
+    />
+    <meta
+      name="keywords"
+      content="Diogo Nascimento, Desenvolvedor, Computer Engineer, UTFPR, Portfolio, Web Developer"
+    />
+    <meta name="author" content="Diogo Nascimento" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Diogo Nascimento - Computer Engineer & Developer"
+    />
+    <meta
+      property="og:description"
+      content="Portfolio profissional de Diogo Nascimento"
+    />
+    <meta property="og:image" content="./main.png" />
+
+    <!-- Favicon (adicione seu favicon) -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styless.css" />
+
+    <!-- AOS - Animate On Scroll -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Preconnect para otimização -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
 
   <body>
-    <!--Navegaition Menu-->
+    <!-- ===== LOADING SCREEN ===== -->
+    <div class="loader">
+      <div class="spinner"></div>
+    </div>
 
+    <!-- ===== NAVIGATION MENU ===== -->
     <nav>
       <div class="nav-container">
         <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
           <span>Diogo</span>
         </div>
         <div class="links">
-          <div
-            class="links"
+          <a
+            href="#home"
             data-aos="fade-up"
             data-aos-duration="1500"
             data-aos-delay="100"
+            >Home</a
           >
-            <a href="#home">Home</a>
-          </div>
-          <div
-            class="links"
+          <a
+            href="#about"
             data-aos="fade-up"
             data-aos-duration="1500"
             data-aos-delay="200"
+            >About</a
           >
-            <a href="#about">About</a>
-          </div>
-          <div
-            class="links"
+          <a
+            href="#skills"
             data-aos="fade-up"
             data-aos-duration="1500"
             data-aos-delay="300"
+            >Skills</a
           >
-            <a href="#skills">Skills</a>
-          </div>
-          <div
-            class="links"
+          <a
+            href="#services"
             data-aos="fade-up"
             data-aos-duration="1500"
             data-aos-delay="400"
+            >Projects</a
           >
-            <a href="#services">Projects</a>
-          </div>
-          <div
-            class="links"
+          <a
+            href="#contact"
             data-aos="fade-up"
             data-aos-duration="1500"
             data-aos-delay="500"
+            >Contact</a
           >
-            <a href="#contact">Contact</a>
-          </div>
         </div>
         <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
       </div>
+
+      <!-- Mobile Dropdown Menu -->
       <div class="dropdown">
         <div class="links">
           <a href="#home">Home</a>
@@ -79,10 +112,12 @@
         </div>
       </div>
     </nav>
-    <section>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="home">
       <div class="main-container">
         <div class="image" data-aos="zoom-out" data-aos-duration="3000">
-          <img src="main.png" alt="" />
+          <img src="main.png" alt="Diogo Nascimento - Developer" />
         </div>
         <div class="content">
           <h1
@@ -90,8 +125,7 @@
             data-aos-duration="1500"
             data-aos-delay="700"
           >
-            Hey I'm
-            <span>Diogo</span>
+            Hey I'm <span>Diogo</span>
           </h1>
           <div
             class="typewriter"
@@ -99,10 +133,7 @@
             data-aos-duration="1500"
             data-aos-delay="900"
           >
-            I'm a
-            <span class="typewriter-text"></span>
-            <label for="">|</label>
-            <script src="script.js"></script>
+            I'm a <span class="typewriter-text"></span><label for="">|</label>
           </div>
           <p
             data-aos="flip-down"
@@ -119,36 +150,42 @@
             <a
               href="https://github.com/DiogoSNs"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Profile"
               data-aos="fade-up"
               data-aos-duration="1500"
               data-aos-delay="1300"
             >
-              <i class="fa-brands fa-github"></i
-            ></a>
+              <i class="fa-brands fa-github"></i>
+            </a>
             <a
               href="https://www.linkedin.com/in/diogo-nascimento-0378542ba/"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
               data-aos="fade-up"
               data-aos-duration="1500"
               data-aos-delay="1400"
             >
-              <i class="fa-brands fa-linkedin"></i
-            ></a>
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
           </div>
+
           <div
             class="btn"
             data-aos="zoom-in"
             data-aos-duration="1500"
             data-aos-delay="1800"
           >
-            <button>Hire Me</button>
+            <a href="#contact">
+              <button>Hire Me</button>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
-
+    <!-- ===== ABOUT SECTION ===== -->
     <section class="about" id="about">
       <div class="content">
         <div class="title" data-aos="fade-up" data-aos-duration="1500">
@@ -161,7 +198,7 @@
             data-aos-duration="1500"
             data-aos-delay="200"
           >
-            <img src="perfil.jpg" alt="" />
+            <img src="perfil.jpg" alt="Diogo Nascimento - Profile Photo" />
           </div>
           <div
             class="right"
@@ -169,14 +206,7 @@
             data-aos-duration="1500"
             data-aos-delay="200"
           >
-            <div
-              class="topic"
-              data-aos="fade-left"
-              data-aos-duration="1500"
-              data-aos-delay="200"
-            >
-              Diogo Augusto Silvério Nascimento
-            </div>
+            <div class="topic">Diogo Augusto Silvério Nascimento</div>
             <p
               data-aos="flip-down"
               data-aos-duration="1500"
@@ -197,7 +227,7 @@
               hands-on experience in the field, enhance my expertise, and
               contribute to my growth in the job market. Proactive and
               collaborative by nature, I am committed to continuously improving
-              my technical and interpersonal skills. solutions.
+              my technical and interpersonal skills.
             </p>
             <div
               class="button"
@@ -205,236 +235,233 @@
               data-aos-duration="1500"
               data-aos-delay="400"
             >
-            <a href="docs/Diogo_Nascimento_CV.pdf" download onclick="alert('Download iniciado!')">
-              <button>
-                <i class="fas fa-download"></i>
-                Download CV
-              </button>
-            </a>
+              <a href="docs/Diogo_Nascimento_CV.pdf" download>
+                <button><i class="fas fa-download"></i> Download CV</button>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- My Skills Section -->
-
+    <!-- ===== SKILLS SECTION ===== -->
     <section class="skills" id="skills">
       <div class="content">
         <div class="title" data-aos="fade-up" data-aos-duration="1200">
           <span>My Skills</span>
         </div>
-        <div class="skills-details">
-          <div class="text">
+
+        <div class="skills-container-v2">
+          <!-- Introdução -->
+          <div class="skills-intro" data-aos="fade-up" data-aos-duration="1200">
+            <p>
+              Throughout my projects, I have honed my programming skills using
+              languages such as <strong>C</strong>, <strong>Java</strong>, and
+              <strong>Python</strong>, and have managed databases with
+              <strong>SQL</strong>. My background in web development includes
+              proficiency in <strong>HTML</strong>, <strong>CSS</strong>, and
+              <strong>JavaScript</strong>, while my hardware programming
+              experience extends to <strong>Arduino</strong>.
+            </p>
+          </div>
+
+          <!-- Grid Unificado de Skills -->
+          <div class="skills-grid-v2">
+            <!-- Frontend -->
             <div
-              class="topic"
-              data-aos="fade-right"
-              data-aos-duration="1200"
+              class="skill-card-v2 html"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <div class="skill-icon-v2">
+                <i class="fab fa-html5"></i>
+              </div>
+              <span class="skill-name-v2">HTML5</span>
+              <span class="skill-badge advanced">Advanced</span>
+            </div>
+
+            <div
+              class="skill-card-v2 css"
+              data-aos="zoom-in"
+              data-aos-delay="150"
+            >
+              <div class="skill-icon-v2">
+                <i class="fab fa-css3-alt"></i>
+              </div>
+              <span class="skill-name-v2">CSS3</span>
+              <span class="skill-badge advanced">Advanced</span>
+            </div>
+
+            <div
+              class="skill-card-v2 js"
+              data-aos="zoom-in"
               data-aos-delay="200"
             >
-              Main Skills Applied in Projects
+              <div class="skill-icon-v2">
+                <i class="fab fa-js"></i>
+              </div>
+              <span class="skill-name-v2">JavaScript</span>
+              <span class="skill-badge intermediate">Intermediate</span>
             </div>
-            <p
-              data-aos="fade-right"
-              data-aos-duration="1200"
+
+            <div
+              class="skill-card-v2 react"
+              data-aos="zoom-in"
+              data-aos-delay="250"
+            >
+              <div class="skill-icon-v2">
+                <i class="fab fa-react"></i>
+              </div>
+              <span class="skill-name-v2">React</span>
+              <span class="skill-badge learning">Learning</span>
+            </div>
+
+            <div
+              class="skill-card-v2 figma"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div class="skill-icon-v2">
+                <i class="fab fa-figma"></i>
+              </div>
+              <span class="skill-name-v2">Figma</span>
+              <span class="skill-badge intermediate">Intermediate</span>
+            </div>
+
+            <!-- Backend & Programming -->
+            <div
+              class="skill-card-v2 python"
+              data-aos="zoom-in"
+              data-aos-delay="350"
+            >
+              <div class="skill-icon-v2">
+                <i class="fab fa-python"></i>
+              </div>
+              <span class="skill-name-v2">Python</span>
+              <span class="skill-badge advanced">Advanced</span>
+            </div>
+
+            <div
+              class="skill-card-v2 java"
+              data-aos="zoom-in"
               data-aos-delay="400"
             >
-              Throughout my projects, I have honed my programming skills using
-              languages such as C, Java, and Python, and have managed databases
-              with SQL. My background in web development includes proficiency in
-              HTML, CSS, and JavaScript, while my hardware programming
-              experience extends to Arduino. I am currently broadening my
-              expertise by studying Node, React, and Docker.
-            </p>
+              <div class="skill-icon-v2">
+                <i class="fab fa-java"></i>
+              </div>
+              <span class="skill-name-v2">Java</span>
+              <span class="skill-badge intermediate">Intermediate</span>
+            </div>
+
             <div
-              class="experience"
-              data-aos="fade-up"
-              data-aos-duration="1200"
+              class="skill-card-v2 c"
+              data-aos="zoom-in"
+              data-aos-delay="450"
+            >
+              <div class="skill-icon-v2">
+                <i class="fas fa-code"></i>
+              </div>
+              <span class="skill-name-v2">C / C++</span>
+              <span class="skill-badge advanced">Advanced</span>
+            </div>
+
+            <div
+              class="skill-card-v2 node"
+              data-aos="zoom-in"
+              data-aos-delay="500"
+            >
+              <div class="skill-icon-v2">
+                <i class="fab fa-node-js"></i>
+              </div>
+              <span class="skill-name-v2">Node.js</span>
+              <span class="skill-badge learning">Learning</span>
+            </div>
+
+            <div
+              class="skill-card-v2 sql"
+              data-aos="zoom-in"
+              data-aos-delay="550"
+            >
+              <div class="skill-icon-v2">
+                <i class="fas fa-database"></i>
+              </div>
+              <span class="skill-name-v2">SQL</span>
+              <span class="skill-badge intermediate">Intermediate</span>
+            </div>
+
+            <!-- Tools -->
+            <div
+              class="skill-card-v2 docker"
+              data-aos="zoom-in"
               data-aos-delay="600"
             >
-              <div class="num">3</div>
-              <div class="exp">
-                Years Of <br />
-                Experience
-              </div>
-            </div>
-            <div class="technologies-grid">
-              <div class="tech-item">
-                <i class="fab fa-html5"></i>
-                <span>HTML</span>
-              </div>
-              <div class="tech-item" data-aos="fade-up" data-aos-delay="400">
-                <i class="fab fa-css3-alt"></i>
-                <span>CSS</span>
-              </div>
-              <div class="tech-item" data-aos="zoom-out" data-aos-delay="200">
-                <i class="fab fa-js"></i>
-                <span>JavaScript</span>
-              </div>
-              <div class="tech-item">
-                <i class="fab fa-python"></i>
-                <span>Python</span>
-              </div>
-              <div
-                class="tech-item"
-                data-aos="zoom-in-right"
-                data-aos-delay="600"
-              >
-                <i class="fab fa-react"></i>
-                <span>React</span>
-              </div>
-              <div class="tech-item">
-                <i class="fab fa-figma"></i>
-                <span>Figma</span>
-              </div>
-              <div class="tech-item">
-                <i class="fab fa-node-js"></i>
-                <span>Node.js</span>
-              </div>
-              <div class="tech-item" data-aos="fade-right" data-aos-delay="800">
-                <i class="fab fa-java"></i>
-                <span>Java</span>
-              </div>
-              <div class="tech-item">
+              <div class="skill-icon-v2">
                 <i class="fab fa-docker"></i>
-                <span>Docker</span>
               </div>
-              <div class="tech-item" data-aos="fade-up" data-aos-delay="600">
+              <span class="skill-name-v2">Docker</span>
+              <span class="skill-badge learning">Learning</span>
+            </div>
+
+            <div
+              class="skill-card-v2 git"
+              data-aos="zoom-in"
+              data-aos-delay="650"
+            >
+              <div class="skill-icon-v2">
+                <i class="fab fa-git-alt"></i>
+              </div>
+              <span class="skill-name-v2">Git</span>
+              <span class="skill-badge advanced">Advanced</span>
+            </div>
+
+            <div
+              class="skill-card-v2 github"
+              data-aos="zoom-in"
+              data-aos-delay="700"
+            >
+              <div class="skill-icon-v2">
                 <i class="fab fa-github"></i>
-                <span>GitHub</span>
               </div>
-              <div class="tech-item" data-aos="zoom-out" data-aos-delay="1000">
-                <i class="fab fa-windows"></i>
-                <span>Windows</span>
-              </div>
-              <div class="tech-item">
+              <span class="skill-name-v2">GitHub</span>
+              <span class="skill-badge advanced">Advanced</span>
+            </div>
+
+            <div
+              class="skill-card-v2 linux"
+              data-aos="zoom-in"
+              data-aos-delay="750"
+            >
+              <div class="skill-icon-v2">
                 <i class="fab fa-linux"></i>
-                <span>Linux</span>
               </div>
+              <span class="skill-name-v2">Linux</span>
+              <span class="skill-badge intermediate">Intermediate</span>
             </div>
-          </div>
-          <div class="boxes">
-            <div class="box">
-              <div
-                class="topic"
-                data-aos="fade-left"
-                data-aos-duration="1200"
-                data-aos-delay="150"
-              >
-                C
+
+            <div
+              class="skill-card-v2 arduino"
+              data-aos="zoom-in"
+              data-aos-delay="800"
+            >
+              <div class="skill-icon-v2">
+                <i class="fas fa-microchip"></i>
               </div>
-              <div
-                class="per"
-                data-aos="zoom-in"
-                data-aos-duration="1200"
-                data-aos-delay="300"
-              >
-                80%
-              </div>
-            </div>
-            <div class="box">
-              <div
-                class="topic"
-                data-aos="fade-left"
-                data-aos-duration="1200"
-                data-aos-delay="150"
-              >
-                Python
-              </div>
-              <div
-                class="per"
-                data-aos="zoom-in"
-                data-aos-duration="1200"
-                data-aos-delay="300"
-              >
-                70%
-              </div>
-            </div>
-            <div class="box">
-              <div
-                class="topic"
-                data-aos="fade-left"
-                data-aos-duration="1200"
-                data-aos-delay="450"
-              >
-                HTML
-              </div>
-              <div
-                class="per"
-                data-aos="zoom-in"
-                data-aos-duration="1200"
-                data-aos-delay="600"
-              >
-                70%
-              </div>
-            </div>
-            <div class="box">
-              <div
-                class="topic"
-                data-aos="fade-left"
-                data-aos-duration="1200"
-                data-aos-delay="450"
-              >
-                CSS
-              </div>
-              <div
-                class="per"
-                data-aos="zoom-in"
-                data-aos-duration="1200"
-                data-aos-delay="600"
-              >
-                60%
-              </div>
-            </div>
-            <div class="box">
-              <div
-                class="topic"
-                data-aos="fade-left"
-                data-aos-duration="1200"
-                data-aos-delay="450"
-              >
-                SQL
-              </div>
-              <div
-                class="per"
-                data-aos="zoom-in"
-                data-aos-duration="1200"
-                data-aos-delay="600"
-              >
-                60%
-              </div>
-            </div>
-            <div class="box">
-              <div
-                class="topic"
-                data-aos="fade-left"
-                data-aos-duration="1200"
-                data-aos-delay="450"
-              >
-                Java
-              </div>
-              <div
-                class="per"
-                data-aos="zoom-in"
-                data-aos-duration="1200"
-                data-aos-delay="600"
-              >
-                50%
-              </div>
+              <span class="skill-name-v2">Arduino</span>
+              <span class="skill-badge intermediate">Intermediate</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- My Projects Secetion -->
-
+    <!-- ===== PROJECTS SECTION ===== -->
     <section class="services" id="services">
       <div class="content">
         <div class="title" data-aos="fade-up" data-aos-duration="1200">
           <span>My Projects</span>
         </div>
         <div class="boxes">
+          <!-- Project 1 -->
           <div
             class="box"
             data-aos="fade-up"
@@ -444,50 +471,46 @@
             <a
               href="https://github.com/DiogoSNs/McDonald-s-Digital-Self-Order-Kiosk"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <div class="icon">
                 <i class="fas fa-desktop"></i>
               </div>
-              <div class="topic">Web Development</div></a
-            >
-            <p>FSW Donald's - Mobile Digital Self-Order Kiosk System</p>
+              <div class="topic">Web Development</div>
+              <p>FSW Donald's - Mobile Digital Self-Order Kiosk System</p>
+            </a>
           </div>
-          
-          
-      </div>
-      <div class="boxes">
-        <div
-          class="box"
-          data-aos="fade-up"
-          data-aos-duration="1500"
-          data-aos-delay="200"
-        >
-          <a
-            href="https://github.com/DiogoSNs/Magic-Background-Remover-Pro"
-            target="_blank"
+
+          <!-- Project 2 -->
+          <div
+            class="box"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="400"
           >
-            <div class="icon">
-              <i class="fas fa-camera-retro"></i>
-            </div>
-            <div class="topic">Python Desktop App</div></a
-          >
-          <p>Magic Background Remover Pro AI - Powered</p>
+            <a
+              href="https://github.com/DiogoSNs/Magic-Background-Remover-Pro"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="icon">
+                <i class="fas fa-camera-retro"></i>
+              </div>
+              <div class="topic">Python Desktop App</div>
+              <p>Magic Background Remover Pro AI - Powered</p>
+            </a>
+          </div>
         </div>
-      
-    </div>
+      </div>
     </section>
 
-    <!-- Contact Me Section -->
-
+    <!-- ===== CONTACT SECTION ===== -->
     <section class="contact" id="contact">
       <div class="content">
         <div class="title" data-aos="fade-up" data-aos-duration="1500">
           <span>Contact Me</span>
         </div>
         <div class="text">
-          <div class="title reveal">
-            <h2 class="section-title">Contact Me</h2>
-          </div>
           <div class="content">
             <div
               class="row"
@@ -495,15 +518,18 @@
               data-aos-duration="1500"
               data-aos-delay="300"
             >
+              <!-- Address Card -->
               <div class="card reveal">
                 <div class="contact-icon">
                   <i class="fas fa-map-marker-alt"></i>
                 </div>
                 <div class="info">
                   <h3>Address</h3>
-                  <span>Apucarana - PR</span>
+                  <span>Apucarana - PR, Brazil</span>
                 </div>
               </div>
+
+              <!-- Phone Card -->
               <div class="card reveal">
                 <div class="contact-icon">
                   <i class="fas fa-phone"></i>
@@ -513,6 +539,8 @@
                   <span>+55 (18) 98181-9684</span>
                 </div>
               </div>
+
+              <!-- Email Card -->
               <div class="card reveal">
                 <div class="contact-icon">
                   <i class="fas fa-envelope"></i>
@@ -523,14 +551,15 @@
                 </div>
               </div>
             </div>
-            <div class="row"></div>
           </div>
+
           <p>
             Feel free to reach out to me for any inquiries, collaborations, or
             professional opportunities. I am always open to new challenges. You
             can contact me via email or through my social media. I look forward
             to hearing from you!
           </p>
+
           <div
             class="button"
             data-aos="zoom-in"
@@ -538,33 +567,52 @@
             data-aos-delay="400"
           >
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=diogoaugustosilverio@gmail.com&su=Assunto%20do%20E-mail&body=Olá,%20este%20é%20o%20corpo%20do%20e-mail."
+              href="mailto:diogoaugustosilverio@gmail.com?subject=Professional%20Inquiry&body=Hello%20Diogo,"
               target="_blank"
             >
-              <button>Let's Chat</button></a
-            >
+              <button>Let's Chat</button>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer Section -->
-
+    <!-- ===== FOOTER ===== -->
     <footer>
       <div class="text">
         <span
-          >Created By<a href="https://github.com/DiogoSNs" target="_blank">
-            DiogoSNs</a
+          >Created By
+          <a
+            href="https://github.com/DiogoSNs"
+            target="_blank"
+            rel="noopener noreferrer"
+            >DiogoSNs</a
           >
           | &#169; 2025 All Rights Reserved</span
         >
       </div>
     </footer>
+
+    <!-- ===== SCROLL TO TOP BUTTON ===== -->
+    <div class="scroll-button">
+      <a href="#home" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <!-- AOS Library -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init({ offset: 0 });
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
     </script>
 
+    <!-- Main Scripts -->
+    <script src="script.js"></script>
     <script src="hamburger.js"></script>
   </body>
 </html>
