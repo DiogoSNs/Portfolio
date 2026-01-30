@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO -->
-    <title>Diogo Nascimento - Computer Engineer & Developer</title>
+    <title>Portfolio</title>
     <meta
       name="description"
       content="Portfolio de Diogo Nascimento, estudante de Engenharia de Computação na UTFPR. Desenvolvedor Full Stack com experiência em C, Java, Python, HTML, CSS e JavaScript."
@@ -55,51 +55,45 @@
     </div>
 
     <!-- ===== NAVIGATION MENU ===== -->
-    <nav>
-      <div class="nav-container">
-        <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
-          <span>Diogo</span>
-        </div>
-        <div class="links">
-          <a
-            href="#home"
-            data-aos="fade-up"
-            data-aos-duration="1500"
-            data-aos-delay="100"
-            >Home</a
-          >
-          <a
-            href="#about"
-            data-aos="fade-up"
-            data-aos-duration="1500"
-            data-aos-delay="200"
-            >About</a
-          >
-          <a
-            href="#skills"
-            data-aos="fade-up"
-            data-aos-duration="1500"
-            data-aos-delay="300"
-            >Skills</a
-          >
-          <a
-            href="#services"
-            data-aos="fade-up"
-            data-aos-duration="1500"
-            data-aos-delay="400"
-            >Projects</a
-          >
-          <a
-            href="#contact"
-            data-aos="fade-up"
-            data-aos-duration="1500"
-            data-aos-delay="500"
-            >Contact</a
-          >
-        </div>
-        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-      </div>
+<nav>
+  <div class="nav-container">
+    <!-- Logo -->
+    <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+      <span>Diogo</span>
+    </div>
+    
+    <!-- Links Desktop -->
+    <div class="links">
+      <a href="#home" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">Home</a>
+      <a href="#about" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">About</a>
+      <a href="#skills" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">Skills</a>
+      <a href="#services" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">Projects</a>
+      <a href="#contact" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">Contact</a>
+    </div>
+    
+    <!-- Botão Hambúrguer (apenas mobile) -->
+    <i class="fa-solid fa-bars hamburg" onclick="hamburguer()"></i>
+  </div>
+  
+  <!-- Dropdown Menu Mobile -->
+  <div class="dropdown">
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#services">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
 
+<!-- 
+IMPORTANTE: 
+- Removido o ícone X (fa-xmark) do dropdown
+- Hambúrguer desaparece quando menu abre
+- Clicar fora fecha o menu
+- ESC também fecha
+-->
       <!-- Mobile Dropdown Menu -->
       <div class="dropdown">
         <div class="links">

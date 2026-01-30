@@ -1,39 +1,38 @@
 /* =================================================================
-   MOBILE MENU - HAMBURGER
+   MOBILE MENU - HAMBURGER (VERSÃO CORRIGIDA)
    ================================================================= */
 
 class MobileMenu {
   constructor() {
     this.dropdown = document.querySelector(".dropdown");
     this.hamburger = document.querySelector(".hamburg");
-    this.cancel = document.querySelector(".cancel");
-    this.links = document.querySelectorAll(".dropdown a");
+    this.links = document.querySelectorAll(".dropdown .links a");
     this.body = document.body;
     
     this.init();
   }
 
   init() {
-    // Abrir menu
-    if (this.hamburger) {
-      this.hamburger.addEventListener('click', () => this.open());
-    }
-    
-    // Fechar menu
-    if (this.cancel) {
-      this.cancel.addEventListener('click', () => this.close());
-    }
+    if (!this.dropdown || !this.hamburger) return;
+
+    // Abrir/Fechar menu ao clicar no hambúrguer
+    this.hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      this.toggle();
+    });
     
     // Fechar menu ao clicar em um link
     this.links.forEach(link => {
-      link.addEventListener('click', () => this.close());
+      link.addEventListener('click', () => {
+        this.close();
+      });
     });
 
-    // Fechar menu ao clicar fora dele
+    // Fechar menu ao clicar FORA
     document.addEventListener('click', (e) => {
-      if (!e.target.closest('.dropdown') && 
-          !e.target.closest('.hamburg') && 
-          this.dropdown.classList.contains('active')) {
+      if (this.dropdown.classList.contains('active') && 
+          !this.dropdown.contains(e.target) && 
+          !this.hamburger.contains(e.target)) {
         this.close();
       }
     });
@@ -45,34 +44,32 @@ class MobileMenu {
       }
     });
 
-    // Ajustar menu ao redimensionar janela
+    // Fechar menu ao redimensionar para desktop
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 968) {
+      if (window.innerWidth > 968 && this.dropdown.classList.contains('active')) {
         this.close();
       }
     });
   }
 
+  toggle() {
+    if (this.dropdown.classList.contains('active')) {
+      this.close();
+    } else {
+      this.open();
+    }
+  }
+
   open() {
-    this.dropdown?.classList.add('active');
-    this.hamburger?.classList.add('active');
-    this.body.style.overflow = 'hidden'; // Previne scroll do body
-    
-    // Adiciona animação de fade-in nos links
-    this.animateLinks();
+    this.dropdown.classList.add('active');
+    this.hamburger.classList.add('hide');
+    this.body.style.overflow = 'hidden';
   }
 
   close() {
-    this.dropdown?.classList.remove('active');
-    this.hamburger?.classList.remove('active');
-    this.body.style.overflow = ''; // Restaura scroll do body
-  }
-
-  animateLinks() {
-    // Adiciona delay progressivo nas animações dos links
-    this.links.forEach((link, index) => {
-      link.style.animation = `fadeInLeft 0.5s ease ${index * 0.1}s forwards`;
-    });
+    this.dropdown.classList.remove('active');
+    this.hamburger.classList.remove('hide');
+    this.body.style.overflow = '';
   }
 }
 
@@ -81,36 +78,3 @@ document.addEventListener('DOMContentLoaded', () => {
   new MobileMenu();
   console.log('✅ Menu mobile inicializado!');
 });
-
-// Animação CSS (adicione ao CSS se quiser efeito extra)
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes fadeInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-`;
-document.head.appendChild(style);
-
-/* =================================================================
-   FUNÇÕES GLOBAIS (mantidas para compatibilidade)
-   ================================================================= */
-
-// Funções globais para serem chamadas via onclick no HTML
-function hamburg() {
-  document.querySelector(".dropdown")?.classList.add("active");
-  document.querySelector(".hamburg")?.classList.add("active");
-  document.body.style.overflow = 'hidden';
-}
-
-function cancel() {
-  document.querySelector(".dropdown")?.classList.remove("active");
-  document.querySelector(".hamburg")?.classList.remove("active");
-  document.body.style.overflow = '';
-}

@@ -512,6 +512,15 @@ section .button {
   margin: var(--spacing-lg) 0;
 }
 
+/* Botão Download CV centralizado no meio do texto */
+.button-center {
+  margin: var(--spacing-lg) 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* =================================================================
    SKILLS SECTION
    ================================================================= */
@@ -1297,5 +1306,224 @@ footer .text span a:hover {
 
   section .content {
     width: 95%;
+  }
+}
+
+/* =================================================================
+   NAVBAR - MENU HAMBÚRGUER CORRIGIDO
+   ================================================================= */
+
+nav {
+  width: 100%;
+  height: 10vh;
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 var(--spacing-md);
+  position: relative;
+}
+
+.logo {
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  z-index: 1001;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo span {
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--primary);
+}
+
+/* --- MENU HAMBURGUER --- */
+.hamburg,
+.cancel {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  transition: var(--transition-normal);
+  z-index: 1002;
+  display: none; /* Escondido por padrão */
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hamburg:hover,
+.cancel:hover {
+  color: var(--primary);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* --- LINKS DE NAVEGAÇÃO (DESKTOP) --- */
+.nav-container .links {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.nav-container .links a {
+  position: relative;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin: 0 20px;
+  font-weight: 550;
+  transition: var(--transition-normal);
+  padding: 5px 10px;
+}
+
+.nav-container .links a::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: var(--primary);
+  transition: var(--transition-normal);
+}
+
+.nav-container .links a:hover::before {
+  width: 100%;
+}
+
+.nav-container .links a:hover {
+  color: var(--primary);
+}
+
+/* --- DROPDOWN MENU (MOBILE) --- */
+.dropdown {
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 999;
+}
+
+.dropdown.active {
+  height: calc(100vh - 10vh);
+}
+
+.dropdown .links {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--spacing-xl);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown.active .links {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown .links a {
+  display: flex;
+  color: var(--text-primary);
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-lg) 0;
+  font-size: 1.3rem;
+  font-weight: 500;
+  transition: var(--transition-normal);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.dropdown .links a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.dropdown .links a:hover::before,
+.dropdown .links a:active::before {
+  width: 40px;
+}
+
+.dropdown .links a:hover,
+.dropdown .links a:active {
+  background-color: rgba(183, 75, 75, 0.1);
+  color: var(--primary);
+  padding-left: 50px;
+}
+
+/* IMPORTANTE: Remover o ícone X do dropdown */
+.dropdown .links .cancel {
+  display: none !important;
+}
+
+/* =================================================================
+   MEDIA QUERIES - RESPONSIVIDADE
+   ================================================================= */
+
+@media (max-width: 968px) {
+  nav .logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    font-size: 1.5rem;
+  }
+
+  /* Mostrar hambúrguer no mobile */
+  .hamburg {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Esconder hambúrguer quando menu está aberto */
+  .hamburg.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Esconder links do desktop */
+  .nav-container > .links {
+    display: none;
+  }
+}
+
+@media (min-width: 969px) {
+  /* No desktop, dropdown sempre escondido */
+  .dropdown {
+    display: none !important;
+  }
+  
+  .hamburg {
+    display: none !important;
   }
 }
