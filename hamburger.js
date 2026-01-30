@@ -1,5 +1,5 @@
 /* =================================================================
-   MOBILE MENU - HAMBURGER (VERSÃO CORRIGIDA)
+   MOBILE MENU - HAMBURGER
    ================================================================= */
 
 class MobileMenu {
