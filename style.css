@@ -68,6 +68,7 @@ body {
   color: var(--text-primary);
 }
 
+
 /* --- SCROLLBAR CUSTOMIZADA --- */
 ::-webkit-scrollbar {
   width: 12px;
@@ -510,7 +511,7 @@ section .topic {
 
 section .button {
   margin: var(--spacing-lg) 0;
-    display: flex;
+  display: flex;
   justify-content: center; /* Centraliza horizontalmente */
   align-items: center;
   width: 100%; /* Garante que o container ocupe toda a largura disponível */
