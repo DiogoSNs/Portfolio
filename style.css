@@ -419,6 +419,16 @@ section .button button:hover {
   box-shadow: var(--shadow-primary-lg);
 }
 
+/* Reduzir espaço embaixo do botão Let's Chat */
+.contact-button {
+  margin-bottom: -40px;
+}
+
+/* seção de contato ajuste */
+section:has(.contact-button) {
+  padding-bottom: 20px;
+}
+
 /* =================================================================
    ABOUT SECTION
    ================================================================= */
