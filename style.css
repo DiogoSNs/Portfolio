@@ -747,6 +747,7 @@ section .button {
   margin-top: var(--spacing-sm);
 }
 
+
 /* Badge de Nível */
 .skill-badge {
   padding: 4px 12px;
@@ -821,6 +822,56 @@ section .button {
 }
 .skill-card-v2.arduino {
   --skill-color: #00979d;
+}
+
+/* TypeScript - Cor personalizada */
+.skill-card-v2.typescript {
+  --skill-color: #3178c6;
+}
+
+/* TypeScript - Ícone de Texto com TODOS os efeitos */
+.skill-icon-v2.ts-icon {
+  /* Herda todos os estilos base do .skill-icon-v2 */
+  background: rgba(0, 0, 0, 0.4); /* Mesmo background dos outros */
+}
+
+.skill-icon-v2.ts-icon span {
+  font-weight: 700;
+  color: var(--skill-color); /* Usa a mesma variável dos outros */
+  font-size: 2.2rem; /* Diminuído de 2.5rem para 2.2rem */
+  transition: var(--transition-normal);
+  filter: drop-shadow(0 0 10px var(--skill-color)); /* Mesmo efeito de brilho */
+}
+
+/* Garantir que o ::after funcione igual aos outros */
+.skill-icon-v2.ts-icon::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  background: linear-gradient(
+    45deg,
+    var(--skill-color),
+    transparent,
+    var(--skill-color)
+  );
+  border-radius: 50%;
+  opacity: 0;
+  transition: var(--transition-normal);
+  z-index: -1;
+}
+
+/* Efeitos de hover IGUAIS aos outros */
+.skill-card-v2.typescript:hover .skill-icon-v2.ts-icon::after {
+  opacity: 1;
+  animation: rotate 3s linear infinite;
+}
+
+.skill-card-v2.typescript:hover .skill-icon-v2.ts-icon {
+  transform: scale(1.1);
+}
+
+.skill-card-v2.typescript:hover .skill-icon-v2.ts-icon span {
+  transform: rotateY(360deg);
 }
 
 /* =================================================================
