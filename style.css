@@ -649,6 +649,7 @@ section .button {
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: var(--spacing-lg);
   margin-top: var(--spacing-xl);
+  justify-content: center;
 }
 
 /* Card de Skill */
@@ -1416,10 +1417,30 @@ footer .text span a:hover {
   section .content {
     width: 95%;
   }
+}
 
-  /* Melhorias na seção Skills e Contact para mobile pequeno */
-  .skill-card-v2 {
-    width: 140px;
+@media (max-width: 768px) {
+  .skills-card-v2 {
+    justify-content: center;
+  }
+
+  .skills-cards .card {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .card.reveal {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card.reveal i {
+    margin-bottom: 10px;
   }
 }
 
