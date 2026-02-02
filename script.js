@@ -6,7 +6,7 @@
 // TYPEWRITER EFFECT (EFEITO DE DIGITAÇÃO)
 // =================================================================
 
-const texts = ["DEVELOPER", "COMPUTER ENGINEER", "STUDENT"];
+const texts = ["DEVELOPER", "ENGINEER", "STUDENT"];
 
 const CONFIG = {
   typeSpeed: 100,

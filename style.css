@@ -948,6 +948,12 @@ section .button {
   }
 }
 
+@media (max-width: 768px) {
+  .content .typewriter {
+    min-height: 6.5rem;
+  }
+}
+
 /* =================================================================
    SERVICES/PROJECTS SECTION
    ================================================================= */
