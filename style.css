@@ -592,6 +592,15 @@ section .button {
   font-weight: 500;
 }
 
+.long-text {
+  text-align: justify;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 /* --- SKILL BOXES --- */
 .skills-details .boxes {
   width: 45%;
