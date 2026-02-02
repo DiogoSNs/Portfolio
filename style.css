@@ -1,6 +1,9 @@
 /* =================================================================
-   PORTFOLIO - CSS MELHORADO E PROFISSIONAL
+   PORTFOLIO - CSS
    ================================================================= */
+
+/* --- IMPORT FONTS --- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
 
 /* --- VARIÁVEIS CSS --- */
 :root {
@@ -44,9 +47,6 @@
   --shadow-primary-lg: 0 0 40px rgba(183, 75, 75, 0.6);
 }
 
-/* --- IMPORT FONTS --- */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
-
 /* --- RESET E BASE --- */
 * {
   margin: 0;
@@ -67,7 +67,6 @@ body {
   overflow-x: hidden;
   color: var(--text-primary);
 }
-
 
 /* --- SCROLLBAR CUSTOMIZADA --- */
 ::-webkit-scrollbar {
@@ -402,7 +401,9 @@ section .button button::before {
   border-radius: var(--radius-full);
   background: rgba(255, 255, 255, 0.2);
   transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
+  transition:
+    width 0.6s,
+    height 0.6s;
 }
 
 .content button:hover::before,
@@ -677,7 +678,9 @@ section .button {
 .skill-card-v2:hover {
   border-color: var(--skill-color);
   transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 20px var(--skill-color);
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.5),
+    0 0 20px var(--skill-color);
 }
 
 @keyframes pulse {
@@ -756,7 +759,6 @@ section .button {
   text-align: center;
   margin-top: var(--spacing-sm);
 }
-
 
 /* Badge de Nível */
 .skill-badge {
@@ -1088,7 +1090,9 @@ section .button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  box-shadow: 0 0 15px rgba(183, 75, 75, 0.3), 0 0 25px rgba(183, 75, 75, 0.5);
+  box-shadow:
+    0 0 15px rgba(183, 75, 75, 0.3),
+    0 0 25px rgba(183, 75, 75, 0.5);
   border-radius: var(--radius-lg);
   border: 1px solid rgba(183, 75, 75, 0.2);
   transition: var(--transition-normal);
@@ -1096,7 +1100,9 @@ section .button {
 
 .contact .content .row .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(183, 75, 75, 0.5), 0 0 40px rgba(183, 75, 75, 0.7);
+  box-shadow:
+    0 0 25px rgba(183, 75, 75, 0.5),
+    0 0 40px rgba(183, 75, 75, 0.7);
   border-color: var(--primary);
 }
 
@@ -1206,7 +1212,9 @@ footer .text span a:hover {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
 }
 
 .loader.hidden {
@@ -1514,7 +1522,9 @@ nav {
   padding-top: var(--spacing-xl);
   opacity: 0;
   transform: translateY(-20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .dropdown.active .links {
@@ -1536,7 +1546,7 @@ nav {
 }
 
 .dropdown .links a::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 50%;
@@ -1601,7 +1611,7 @@ nav {
   .dropdown {
     display: none !important;
   }
-  
+
   .hamburg {
     display: none !important;
   }
