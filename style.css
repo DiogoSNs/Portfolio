@@ -333,7 +333,7 @@ section .main-container {
 .content .typewriter {
   font-size: clamp(1.5rem, 1rem + 5vw, 2.5rem);
   font-weight: 600;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
 }
 
 .content .typewriter-text {
@@ -343,7 +343,7 @@ section .main-container {
 
 .content p {
   font-size: clamp(0.9rem, 0.2rem + 2vw, 1.1rem);
-  margin: var(--spacing-md) 0;
+  margin: var(--spacing-sm) 0;
   line-height: 1.8;
   color: var(--text-secondary);
 }
@@ -1331,7 +1331,7 @@ footer .text span a:hover {
   }
 
   .main-container .content {
-    margin-top: var(--spacing-lg);
+    margin-top: 0;
     width: 90%;
     max-width: 100%;
   }
@@ -1347,9 +1347,9 @@ footer .text span a:hover {
   }
 
   .main-container .image {
-    width: 350px;
-    height: 350px;
-    margin-bottom: var(--spacing-lg);
+    width: 380px;
+    height: 65vh;
+    margin-bottom: -30px;
   }
 
   .skills .skills-details {
@@ -1390,7 +1390,8 @@ footer .text span a:hover {
 @media (max-width: 500px) {
   .main-container .image {
     width: 280px;
-    height: 280px;
+    height: 50vh;
+    margin-bottom: -50px;
   }
 
   .main-container .content {
@@ -1441,6 +1442,18 @@ footer .text span a:hover {
 
   .card.reveal i {
     margin-bottom: 10px;
+  }
+
+  /* Centralizar cards de contato em mobile */
+  .contact .content .row {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .contact .content .row .card {
+    width: 90%;
+    max-width: 320px;
   }
 }
 
