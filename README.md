@@ -6,9 +6,8 @@ O portfólio foi pensado para ser **simples, moderno e responsivo**, garantindo 
 
 ## 🌐 Acesso Online
 
-Acesse o projeto diretamente na versão online:  
-https://diogosns.github.io/Portfolio/
----
+👉 **[Acesse o portfólio online](https://diogosns.github.io/Portfolio/)**
+
 
 ## 🎯 Objetivo do Projeto
 
