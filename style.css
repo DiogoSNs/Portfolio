@@ -58,11 +58,15 @@
 
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   width: 100%;
   min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
   background: linear-gradient(135deg, var(--bg-darker) 0%, #1a0a0a 100%);
   overflow-x: hidden;
   color: var(--text-primary);
@@ -1175,6 +1179,7 @@ footer .text span a:hover {
   padding: 15px;
   width: 50px;
   height: 50px;
+  max-width: 100vw;
   display: none;
   justify-content: center;
   align-items: center;
@@ -1203,8 +1208,7 @@ footer .text span a:hover {
 
 .loader {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   background: var(--bg-darker);
@@ -1215,11 +1219,13 @@ footer .text span a:hover {
   transition:
     opacity 0.5s ease,
     visibility 0.5s ease;
+  overflow: hidden;
 }
 
 .loader.hidden {
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
 }
 
 .spinner {
@@ -1229,10 +1235,16 @@ footer .text span a:hover {
   border-top: 4px solid var(--primary);
   border-radius: var(--radius-full);
   animation: spin 1s linear infinite;
+  /* Garantir que o spinner não seja afetado por transforms */
+  position: relative;
+  flex-shrink: 0;
 }
 
 @keyframes spin {
-  to {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
     transform: rotate(360deg);
   }
 }
@@ -1397,7 +1409,7 @@ footer .text span a:hover {
 }
 
 /* =================================================================
-   NAVBAR - MENU HAMBÚRGUER CORRIGIDO
+   NAVBAR - MENU HAMBÚRGUER
    ================================================================= */
 
 nav {
