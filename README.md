@@ -1,9 +1,13 @@
-# 🌐 Portfólio Pessoal
+# 👤 Portfólio Pessoal
 
 Este repositório contém o código-fonte do meu **portfólio pessoal**, desenvolvido com o objetivo de apresentar meus projetos, habilidades técnicas e evolução como desenvolvedor.
 
 O portfólio foi pensado para ser **simples, moderno e responsivo**, garantindo uma boa experiência tanto no desktop quanto em dispositivos móveis, além de servir como um espaço central para demonstrar meus trabalhos e estudos.
 
+## 🌐 Acesso Online
+
+Acesse o projeto diretamente na versão online:  
+https://diogosns.github.io/Portfolio/
 ---
 
 ## 🎯 Objetivo do Projeto
