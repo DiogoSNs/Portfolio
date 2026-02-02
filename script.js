@@ -1,5 +1,5 @@
 /* =================================================================
-   PORTFOLIO - JAVASCRIPT MELHORADO
+   PORTFOLIO - JAVASCRIP
    ================================================================= */
 
 // =================================================================
@@ -12,7 +12,7 @@ const CONFIG = {
   typeSpeed: 100,
   eraseSpeed: 50,
   delayBetweenTexts: 1000,
-  delayBeforeErase: 2000
+  delayBeforeErase: 2000,
 };
 
 class Typewriter {
@@ -26,7 +26,9 @@ class Typewriter {
 
   type() {
     if (this.characterIndex < this.texts[this.textIndex].length) {
-      this.element.innerHTML += this.texts[this.textIndex].charAt(this.characterIndex);
+      this.element.innerHTML += this.texts[this.textIndex].charAt(
+        this.characterIndex,
+      );
       this.characterIndex++;
       setTimeout(() => this.type(), this.config.typeSpeed);
     } else {
@@ -56,31 +58,31 @@ class Typewriter {
 
 class ScrollToTop {
   constructor() {
-    this.button = document.querySelector('.scroll-button a');
+    this.button = document.querySelector(".scroll-button a");
     this.init();
   }
 
   init() {
     if (!this.button) return;
-    
+
     // Mostrar/ocultar botão ao fazer scroll
-    window.addEventListener('scroll', () => this.toggleButton());
-    
+    window.addEventListener("scroll", () => this.toggleButton());
+
     // Click no botão para voltar ao topo
-    this.button.addEventListener('click', (e) => {
+    this.button.addEventListener("click", (e) => {
       e.preventDefault();
-      window.scrollTo({ 
-        top: 0, 
-        behavior: 'smooth' 
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
       });
     });
   }
 
   toggleButton() {
     if (window.scrollY > 300) {
-      this.button.classList.add('show');
+      this.button.classList.add("show");
     } else {
-      this.button.classList.remove('show');
+      this.button.classList.remove("show");
     }
   }
 }
@@ -91,28 +93,28 @@ class ScrollToTop {
 
 class ScrollReveal {
   constructor() {
-    this.elements = document.querySelectorAll('.reveal');
+    this.elements = document.querySelectorAll(".reveal");
     this.init();
   }
 
   init() {
     if (this.elements.length === 0) return;
-    
+
     // Revelar elementos ao carregar a página
     this.reveal();
-    
+
     // Revelar elementos ao fazer scroll
-    window.addEventListener('scroll', () => this.reveal());
+    window.addEventListener("scroll", () => this.reveal());
   }
 
   reveal() {
-    this.elements.forEach(element => {
+    this.elements.forEach((element) => {
       const elementTop = element.getBoundingClientRect().top;
       const windowHeight = window.innerHeight;
-      
+
       // Ativar animação quando elemento está visível
       if (elementTop < windowHeight - 100) {
-        element.classList.add('active');
+        element.classList.add("active");
       }
     });
   }
@@ -124,17 +126,17 @@ class ScrollReveal {
 
 class LoadingScreen {
   constructor() {
-    this.loader = document.querySelector('.loader');
+    this.loader = document.querySelector(".loader");
     this.init();
   }
 
   init() {
     if (!this.loader) return;
-    
+
     // Esconder loader após página carregar
-    window.addEventListener('load', () => {
+    window.addEventListener("load", () => {
       setTimeout(() => {
-        this.loader.classList.add('hidden');
+        this.loader.classList.add("hidden");
       }, 500);
     });
   }
@@ -151,27 +153,27 @@ class SmoothScroll {
   }
 
   init() {
-    this.links.forEach(link => {
-      link.addEventListener('click', (e) => {
+    this.links.forEach((link) => {
+      link.addEventListener("click", (e) => {
         e.preventDefault();
-        
-        const targetId = link.getAttribute('href');
-        if (targetId === '#') return;
-        
+
+        const targetId = link.getAttribute("href");
+        if (targetId === "#") return;
+
         const targetElement = document.querySelector(targetId);
-        
+
         if (targetElement) {
           const offsetTop = targetElement.offsetTop - 80; // Offset para compensar navbar
-          
+
           window.scrollTo({
             top: offsetTop,
-            behavior: 'smooth'
+            behavior: "smooth",
           });
-          
+
           // Fechar menu mobile se estiver aberto
-          const dropdown = document.querySelector('.dropdown');
-          if (dropdown && dropdown.classList.contains('active')) {
-            dropdown.classList.remove('active');
+          const dropdown = document.querySelector(".dropdown");
+          if (dropdown && dropdown.classList.contains("active")) {
+            dropdown.classList.remove("active");
           }
         }
       });
@@ -185,18 +187,18 @@ class SmoothScroll {
 
 class NavbarScroll {
   constructor() {
-    this.nav = document.querySelector('nav');
+    this.nav = document.querySelector("nav");
     this.init();
   }
 
   init() {
     if (!this.nav) return;
-    
-    window.addEventListener('scroll', () => {
+
+    window.addEventListener("scroll", () => {
       if (window.scrollY > 50) {
-        this.nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.8)';
+        this.nav.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.8)";
       } else {
-        this.nav.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.5)';
+        this.nav.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.5)";
       }
     });
   }
@@ -206,7 +208,7 @@ class NavbarScroll {
 // INICIALIZAÇÃO
 // =================================================================
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   // Inicializar Typewriter
   const typewriterElement = document.querySelector(".typewriter-text");
   if (typewriterElement) {
@@ -230,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
   new NavbarScroll();
 
   // Log de inicialização
-  console.log('✅ Portfolio JavaScript inicializado com sucesso!');
+  console.log("✅ Portfolio JavaScript inicializado com sucesso!");
 });
 
 // =================================================================
@@ -238,14 +240,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // =================================================================
 
 // Lazy Loading de Imagens (se necessário no futuro)
-if ('IntersectionObserver' in window) {
+if ("IntersectionObserver" in window) {
   const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const img = entry.target;
         if (img.dataset.src) {
           img.src = img.dataset.src;
-          img.removeAttribute('data-src');
+          img.removeAttribute("data-src");
           observer.unobserve(img);
         }
       }
@@ -253,7 +255,7 @@ if ('IntersectionObserver' in window) {
   });
 
   // Observar imagens com data-src (adicione data-src nas imgs para usar)
-  document.querySelectorAll('img[data-src]').forEach(img => {
+  document.querySelectorAll("img[data-src]").forEach((img) => {
     imageObserver.observe(img);
   });
 }
