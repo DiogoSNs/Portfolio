@@ -1,13 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-lang="en" class="notranslate" translate="no">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google" content="notranslate" />
+    <script>
+      (function () {
+        try {
+          var l = localStorage.getItem("portfolio_lang") || "en";
+          document.documentElement.setAttribute("data-lang", l);
+        } catch (e) {}
+      })();
+    </script>
 
     <!-- SEO -->
-    <title>Portfolio</title>
+    <title data-i18n="meta.title">Portfolio</title>
     <meta
       name="description"
+      data-i18n-attr="content:meta.description"
       content="Portfolio de Diogo Nascimento, estudante de Engenharia de Computação na UTFPR. Desenvolvedor Full Stack com experiência em C, Java, Python, HTML, CSS e JavaScript."
     />
     <meta
@@ -55,47 +65,103 @@
     </div>
 
     <!-- ===== NAVIGATION MENU ===== -->
-<nav>
-  <div class="nav-container">
-    <!-- Logo -->
-    <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
-      <span>Diogo Nascimento</span>
-    </div>
-    
-    <!-- Links Desktop -->
-    <div class="links">
-      <a href="#home" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">Home</a>
-      <a href="#about" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">About</a>
-      <a href="#skills" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">Skills</a>
-      <a href="#services" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">Projects</a>
-      <a href="#contact" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">Contact</a>
-    </div>
-    
-    <!-- Botão Hambúrguer (apenas mobile) -->
-    <i class="fa-solid fa-bars hamburg" onclick="script()"></i>
-  </div>
-  
-  <!-- Dropdown Menu Mobile -->
-  <div class="dropdown">
-    <div class="links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#services">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-</nav>
+    <nav>
+      <div class="nav-container">
+        <!-- Logo -->
+        <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+          <span>Diogo Nascimento</span>
+        </div>
 
-      <!-- Mobile Dropdown Menu -->
+        <!-- Links Desktop -->
+        <div class="links">
+          <a href="#home" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100" data-i18n="nav.home">Home</a>
+          <a href="#about" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200" data-i18n="nav.about">About</a>
+          <a href="#skills" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300" data-i18n="nav.skills">Skills</a>
+          <a href="#services" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400" data-i18n="nav.projects">Projects</a>
+          <a href="#contact" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500" data-i18n="nav.contact">Contact</a>
+
+          <!-- Botão de Idioma alinhado diretamente na barra de links -->
+          <div class="lang-selector" id="langSelector" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600">
+            <button type="button" class="lang-btn" id="langBtn" aria-label="Change Language">
+              <i class="fa-solid fa-globe"></i>
+              <span class="lang-current">EN</span>
+              <i class="fa-solid fa-chevron-down lang-arrow"></i>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+              <button type="button" class="lang-option active" data-lang="en">
+                <span class="lang-flag-box">
+                  <svg viewBox="0 0 640 480" class="flag-svg">
+                    <path fill="#bd3d44" d="M0 0h640v480H0z"/>
+                    <path stroke="#fff" stroke-width="37" d="M0 55h640M0 129h640M0 203h640M0 277h640M0 351h640M0 425h640"/>
+                    <path fill="#192f5d" d="M0 0h260v259H0z"/>
+                    <circle cx="40" cy="35" r="8" fill="#fff"/><circle cx="90" cy="35" r="8" fill="#fff"/><circle cx="140" cy="35" r="8" fill="#fff"/><circle cx="190" cy="35" r="8" fill="#fff"/>
+                    <circle cx="65" cy="70" r="8" fill="#fff"/><circle cx="115" cy="70" r="8" fill="#fff"/><circle cx="165" cy="70" r="8" fill="#fff"/><circle cx="215" cy="70" r="8" fill="#fff"/>
+                    <circle cx="40" cy="105" r="8" fill="#fff"/><circle cx="90" cy="105" r="8" fill="#fff"/><circle cx="140" cy="105" r="8" fill="#fff"/><circle cx="190" cy="105" r="8" fill="#fff"/>
+                    <circle cx="65" cy="140" r="8" fill="#fff"/><circle cx="115" cy="140" r="8" fill="#fff"/><circle cx="165" cy="140" r="8" fill="#fff"/><circle cx="215" cy="140" r="8" fill="#fff"/>
+                    <circle cx="40" cy="175" r="8" fill="#fff"/><circle cx="90" cy="175" r="8" fill="#fff"/><circle cx="140" cy="175" r="8" fill="#fff"/><circle cx="190" cy="175" r="8" fill="#fff"/>
+                    <circle cx="65" cy="210" r="8" fill="#fff"/><circle cx="115" cy="210" r="8" fill="#fff"/><circle cx="165" cy="210" r="8" fill="#fff"/><circle cx="215" cy="210" r="8" fill="#fff"/>
+                  </svg>
+                </span>
+                <span class="lang-name">English</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="lang-option" data-lang="pt">
+                <span class="lang-flag-box">
+                  <svg viewBox="0 0 640 480" class="flag-svg">
+                    <path fill="#009c3b" d="M0 0h640v480H0z"/>
+                    <path fill="#ffdf00" d="M320 55L590 240 320 425 50 240z"/>
+                    <circle cx="320" cy="240" r="105" fill="#002776"/>
+                    <path fill="#fff" d="M215 240a105 105 0 0 0 210 0c0-10-105 15-210 0z"/>
+                  </svg>
+                </span>
+                <span class="lang-name">Português</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botão Hambúrguer (apenas mobile) -->
+        <i class="fa-solid fa-bars hamburg" aria-label="Menu"></i>
+      </div>
+
+      <!-- Dropdown Menu Mobile -->
       <div class="dropdown">
         <div class="links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#services">Projects</a>
-          <a href="#contact">Contact</a>
-          <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+          <a href="#home" data-i18n="nav.home">Home</a>
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#skills" data-i18n="nav.skills">Skills</a>
+          <a href="#services" data-i18n="nav.projects">Projects</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+          <div class="dropdown-lang">
+            <button type="button" class="dropdown-lang-btn active" data-lang="en">
+              <span class="lang-flag-box">
+                <svg viewBox="0 0 640 480" class="flag-svg">
+                  <path fill="#bd3d44" d="M0 0h640v480H0z"/>
+                  <path stroke="#fff" stroke-width="37" d="M0 55h640M0 129h640M0 203h640M0 277h640M0 351h640M0 425h640"/>
+                  <path fill="#192f5d" d="M0 0h260v259H0z"/>
+                  <circle cx="40" cy="35" r="8" fill="#fff"/><circle cx="90" cy="35" r="8" fill="#fff"/><circle cx="140" cy="35" r="8" fill="#fff"/><circle cx="190" cy="35" r="8" fill="#fff"/>
+                  <circle cx="65" cy="70" r="8" fill="#fff"/><circle cx="115" cy="70" r="8" fill="#fff"/><circle cx="165" cy="70" r="8" fill="#fff"/><circle cx="215" cy="70" r="8" fill="#fff"/>
+                  <circle cx="40" cy="105" r="8" fill="#fff"/><circle cx="90" cy="105" r="8" fill="#fff"/><circle cx="140" cy="105" r="8" fill="#fff"/><circle cx="190" cy="105" r="8" fill="#fff"/>
+                  <circle cx="65" cy="140" r="8" fill="#fff"/><circle cx="115" cy="140" r="8" fill="#fff"/><circle cx="165" cy="140" r="8" fill="#fff"/><circle cx="215" cy="140" r="8" fill="#fff"/>
+                  <circle cx="40" cy="175" r="8" fill="#fff"/><circle cx="90" cy="175" r="8" fill="#fff"/><circle cx="140" cy="175" r="8" fill="#fff"/><circle cx="190" cy="175" r="8" fill="#fff"/>
+                  <circle cx="65" cy="210" r="8" fill="#fff"/><circle cx="115" cy="210" r="8" fill="#fff"/><circle cx="165" cy="210" r="8" fill="#fff"/><circle cx="215" cy="210" r="8" fill="#fff"/>
+                </svg>
+              </span>
+              English
+            </button>
+            <button type="button" class="dropdown-lang-btn" data-lang="pt">
+              <span class="lang-flag-box">
+                <svg viewBox="0 0 640 480" class="flag-svg">
+                  <path fill="#009c3b" d="M0 0h640v480H0z"/>
+                  <path fill="#ffdf00" d="M320 55L590 240 320 425 50 240z"/>
+                  <circle cx="320" cy="240" r="105" fill="#002776"/>
+                  <path fill="#fff" d="M215 240a105 105 0 0 0 210 0c0-10-105 15-210 0z"/>
+                </svg>
+              </span>
+              Português
+            </button>
+          </div>
         </div>
       </div>
     </nav>
@@ -112,24 +178,25 @@
             data-aos-duration="1500"
             data-aos-delay="700"
           >
-            Hey I'm <span>Diogo</span>
+            <span data-i18n="hero.greeting">Hey I'm</span> <span>Diogo</span>
           </h1>
           <div
-            class="typewriter"
+            class="typewriter notranslate"
+            translate="no"
             data-aos="fade-right"
             data-aos-duration="1500"
             data-aos-delay="900"
           >
-            I'm a <span class="typewriter-text"></span><label for="">|</label>
+            <span data-i18n="hero.imA">I'm a</span> <span class="typewriter-text"></span><label for="">|</label>
           </div>
-         <p
-  data-aos="flip-down"
-  data-aos-duration="1500"
-  data-aos-delay="1100"
->
-  Currently, I am in the <strong>sixth semester</strong> of the <strong>Computer Engineering program</strong> at the <strong>Federal University of Technology - Paraná (UTFPR)</strong> and have strong skills in <strong>programming, systems analysis, and problem-solving</strong>.
-</p>
-
+          <p
+            data-aos="flip-down"
+            data-aos-duration="1500"
+            data-aos-delay="1100"
+            data-i18n-html="hero.bio"
+          >
+            Currently, I am in the <strong>sixth semester</strong> of the <strong>Computer Engineering program</strong> at the <strong>Federal University of Technology - Paraná (UTFPR)</strong> and have strong skills in <strong>programming, systems analysis, and problem-solving</strong>.
+          </p>
 
           <div class="social-links">
             <a
@@ -163,7 +230,7 @@
             data-aos-delay="1800"
           >
             <a href="#contact">
-              <button>Hire Me</button>
+              <button data-i18n="hero.hireMe">Hire Me</button>
             </a>
           </div>
         </div>
@@ -174,7 +241,7 @@
     <section class="about" id="about">
       <div class="content">
         <div class="title" data-aos="fade-up" data-aos-duration="1500">
-          <span>About Me</span>
+          <span data-i18n="about.title">About Me</span>
         </div>
         <div class="about-details">
           <div
@@ -191,25 +258,24 @@
             data-aos-duration="1500"
             data-aos-delay="200"
           >
-            <div class="topic">Diogo Augusto Silvério Nascimento</div>
-<p
-  data-aos="flip-down"
-  data-aos-duration="1500"
-  data-aos-delay="300"
->
-  I am pursuing a degree in <strong>Computer Engineering</strong> at the <strong>Federal University of Technology - Paraná (UTFPR)</strong>. I have actively participated in <strong>extension and research projects</strong>, including training teachers in <strong>Python and Web Development</strong> for the New High School curriculum and developing a <strong>web interface for a predictive model of student dropout</strong>. Additionally, I created a <strong>Chatbot for micro and small businesses</strong> and taught <strong>basic programming and Arduino classes</strong> for the Dom Bosco Scout Group.
-
-  I hold certifications from <strong>Cisco Networking Academy</strong> in <strong>Introduction to IoT</strong>, <strong>freeCodeCamp</strong> in <strong>Responsive Web Design</strong>, <strong>Via Certa Professional Education</strong> in IT and Technology, and <strong>Oracle Academy</strong> in <strong>Java Fundamentals</strong>. My English proficiency is <strong>advanced</strong>. I am seeking a professional opportunity that allows me to gain <strong>hands-on experience</strong> in the field, further develop my expertise, and contribute meaningfully to my growth in the job market. Proactive and collaborative by nature, I am committed to continuously improving my <strong>technical and interpersonal skills</strong>.
-</p>
+            <div class="topic" data-i18n="about.name">Diogo Augusto Silvério Nascimento</div>
+            <p
+              data-aos="flip-down"
+              data-aos-duration="1500"
+              data-aos-delay="300"
+              data-i18n-html="about.bio"
+            >
+              I am pursuing a degree in <strong>Computer Engineering</strong> at the <strong>Federal University of Technology - Paraná (UTFPR)</strong>. I have actively participated in <strong>extension and research projects</strong>, including training teachers in <strong>Python and Web Development</strong> for the New High School curriculum and developing a <strong>web interface for a predictive model of student dropout</strong>. Additionally, I created a <strong>Chatbot for micro and small businesses</strong> and taught <strong>basic programming and Arduino classes</strong> for the Dom Bosco Scout Group.<br><br>I hold certifications from <strong>Cisco Networking Academy</strong> in <strong>Introduction to IoT</strong>, <strong>freeCodeCamp</strong> in <strong>Responsive Web Design</strong>, <strong>Via Certa Professional Education</strong> in IT and Technology, and <strong>Oracle Academy</strong> in <strong>Java Fundamentals</strong>. My English proficiency is <strong>advanced</strong>. I am seeking a professional opportunity that allows me to gain <strong>hands-on experience</strong> in the field, further develop my expertise, and contribute meaningfully to my growth in the job market. Proactive and collaborative by nature, I am committed to continuously improving my <strong>technical and interpersonal skills</strong>.
+            </p>
 
             <div
-              class="button "
+              class="button"
               data-aos="zoom-in-right"
               data-aos-duration="1500"
               data-aos-delay="400"
             >
               <a href="docs/Diogo_Nascimento_CV.pdf" download>
-                <button><i class="fas fa-download"></i> Download CV</button>
+                <button><i class="fas fa-download"></i> <span data-i18n="about.downloadCv">Download CV</span></button>
               </a>
             </div>
           </div>
@@ -221,17 +287,14 @@
     <section class="skills" id="skills">
       <div class="content">
         <div class="title" data-aos="fade-up" data-aos-duration="1200">
-          <span>My Skills</span>
+          <span data-i18n="skills.title">My Skills</span>
         </div>
 
         <div class="skills-container-v2">
           <!-- Introdução -->
           <div class="skills-intro long-text" data-aos="fade-up" data-aos-duration="1200">
-            <p>
-              <p>
-  I have experience in programming with <strong>C</strong>, <strong>Java</strong>, and <strong>Python</strong>, and managing databases with <strong>SQL</strong>. In web development, I am skilled in <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, and I am currently studying <strong>React</strong>, <strong>Node.js</strong> and <strong>Docker</strong>. My hardware experience includes <strong>Arduino</strong>, and I am familiar with <strong>Linux</strong> and <strong>Windows</strong>. Am proficient in <strong>Git</strong> and <strong>GitHub</strong>. Additionally, I have experience in <strong>audio and video editing</strong>.
-</p>
-
+            <p data-i18n-html="skills.intro">
+              I have experience in programming with <strong>C</strong>, <strong>Java</strong>, and <strong>Python</strong>, and managing databases with <strong>SQL</strong>. In web development, I am skilled in <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, and I am currently studying <strong>React</strong>, <strong>Node.js</strong> and <strong>Docker</strong>. My hardware experience includes <strong>Arduino</strong>, and I am familiar with <strong>Linux</strong> and <strong>Windows</strong>. Am proficient in <strong>Git</strong> and <strong>GitHub</strong>. Additionally, I have experience in <strong>audio and video editing</strong>.
             </p>
           </div>
 
@@ -247,7 +310,7 @@
                 <i class="fab fa-html5"></i>
               </div>
               <span class="skill-name-v2">HTML5</span>
-              <span class="skill-badge advanced">Advanced</span>
+              <span class="skill-badge advanced" data-i18n="skills.levels.advanced">Advanced</span>
             </div>
 
             <div
@@ -259,7 +322,7 @@
                 <i class="fab fa-css3-alt"></i>
               </div>
               <span class="skill-name-v2">CSS3</span>
-              <span class="skill-badge advanced">Advanced</span>
+              <span class="skill-badge advanced" data-i18n="skills.levels.advanced">Advanced</span>
             </div>
 
             <div
@@ -271,16 +334,16 @@
                 <i class="fab fa-js"></i>
               </div>
               <span class="skill-name-v2">JavaScript</span>
-              <span class="skill-badge intermediate">Intermediate</span>
+              <span class="skill-badge intermediate" data-i18n="skills.levels.intermediate">Intermediate</span>
             </div>
 
             <div class="skill-card-v2 typescript" data-aos="zoom-in" data-aos-delay="200">
-  <div class="skill-icon-v2 ts-icon">
-    <span>TS</span>
-  </div>
-  <span class="skill-name-v2">TypeScript</span>
-  <span class="skill-badge learning">Learning</span>
-</div>
+              <div class="skill-icon-v2 ts-icon">
+                <span>TS</span>
+              </div>
+              <span class="skill-name-v2">TypeScript</span>
+              <span class="skill-badge learning" data-i18n="skills.levels.learning">Learning</span>
+            </div>
 
             <div
               class="skill-card-v2 react"
@@ -291,7 +354,7 @@
                 <i class="fab fa-react"></i>
               </div>
               <span class="skill-name-v2">React</span>
-              <span class="skill-badge learning">Learning</span>
+              <span class="skill-badge learning" data-i18n="skills.levels.learning">Learning</span>
             </div>
 
             <div
@@ -303,7 +366,7 @@
                 <i class="fab fa-figma"></i>
               </div>
               <span class="skill-name-v2">Figma</span>
-              <span class="skill-badge intermediate">Intermediate</span>
+              <span class="skill-badge intermediate" data-i18n="skills.levels.intermediate">Intermediate</span>
             </div>
 
             <!-- Backend & Programming -->
@@ -316,7 +379,7 @@
                 <i class="fab fa-python"></i>
               </div>
               <span class="skill-name-v2">Python</span>
-              <span class="skill-badge advanced">Advanced</span>
+              <span class="skill-badge advanced" data-i18n="skills.levels.advanced">Advanced</span>
             </div>
 
             <div
@@ -328,7 +391,7 @@
                 <i class="fab fa-java"></i>
               </div>
               <span class="skill-name-v2">Java</span>
-              <span class="skill-badge intermediate">Intermediate</span>
+              <span class="skill-badge intermediate" data-i18n="skills.levels.intermediate">Intermediate</span>
             </div>
 
             <div
@@ -340,7 +403,7 @@
                 <i class="fas fa-code"></i>
               </div>
               <span class="skill-name-v2">C</span>
-              <span class="skill-badge advanced">Advanced</span>
+              <span class="skill-badge advanced" data-i18n="skills.levels.advanced">Advanced</span>
             </div>
 
             <div
@@ -352,7 +415,7 @@
                 <i class="fab fa-node-js"></i>
               </div>
               <span class="skill-name-v2">Node.js</span>
-              <span class="skill-badge learning">Learning</span>
+              <span class="skill-badge learning" data-i18n="skills.levels.learning">Learning</span>
             </div>
 
             <div
@@ -364,7 +427,7 @@
                 <i class="fas fa-database"></i>
               </div>
               <span class="skill-name-v2">SQL</span>
-              <span class="skill-badge intermediate">Intermediate</span>
+              <span class="skill-badge intermediate" data-i18n="skills.levels.intermediate">Intermediate</span>
             </div>
 
             <!-- Tools -->
@@ -377,7 +440,7 @@
                 <i class="fab fa-docker"></i>
               </div>
               <span class="skill-name-v2">Docker</span>
-              <span class="skill-badge learning">Learning</span>
+              <span class="skill-badge learning" data-i18n="skills.levels.learning">Learning</span>
             </div>
 
             <div
@@ -389,7 +452,7 @@
                 <i class="fab fa-git-alt"></i>
               </div>
               <span class="skill-name-v2">Git</span>
-              <span class="skill-badge advanced">Advanced</span>
+              <span class="skill-badge advanced" data-i18n="skills.levels.advanced">Advanced</span>
             </div>
 
             <div
@@ -401,7 +464,7 @@
                 <i class="fab fa-github"></i>
               </div>
               <span class="skill-name-v2">GitHub</span>
-              <span class="skill-badge advanced">Advanced</span>
+              <span class="skill-badge advanced" data-i18n="skills.levels.advanced">Advanced</span>
             </div>
 
             <div
@@ -413,7 +476,7 @@
                 <i class="fab fa-linux"></i>
               </div>
               <span class="skill-name-v2">Linux</span>
-              <span class="skill-badge intermediate">Intermediate</span>
+              <span class="skill-badge intermediate" data-i18n="skills.levels.intermediate">Intermediate</span>
             </div>
 
             <div
@@ -425,7 +488,7 @@
                 <i class="fas fa-microchip"></i>
               </div>
               <span class="skill-name-v2">Arduino</span>
-              <span class="skill-badge intermediate">Intermediate</span>
+              <span class="skill-badge intermediate" data-i18n="skills.levels.intermediate">Intermediate</span>
             </div>
           </div>
         </div>
@@ -436,7 +499,7 @@
     <section class="services" id="services">
       <div class="content">
         <div class="title" data-aos="fade-up" data-aos-duration="1200">
-          <span>My Projects</span>
+          <span data-i18n="projects.title">My Projects</span>
         </div>
         <div class="boxes">
           <!-- Project 1 -->
@@ -455,7 +518,7 @@
                 <i class="fas fa-desktop"></i>
               </div>
               <div class="topic">Didi Donald's</div>
-              <p>A mobile self-service restaurant ordering system inspired by fast-food kiosks, built to deliver a smooth, intuitive, and user-friendly ordering experience.</p>
+              <p data-i18n="projects.project1Desc">A mobile self-service restaurant ordering system inspired by fast-food kiosks, built to deliver a smooth, intuitive, and user-friendly ordering experience.</p>
             </a>
           </div>
 
@@ -475,7 +538,7 @@
                 <i class="fas fa-map-marker-alt"></i>
               </div>
               <div class="topic">Memory Book</div>
-              <p>A web application that transforms memories into interactive map pins, combining locations, media, and music through Spotify integration.</p>
+              <p data-i18n="projects.project2Desc">A web application that transforms memories into interactive map pins, combining locations, media, and music through Spotify integration.</p>
             </a>
           </div>
 
@@ -495,7 +558,27 @@
                 <i class="fas fa-camera-retro"></i>
               </div>
               <div class="topic">Magic Background Remover Pro</div>
-              <p>A modern Python desktop application that uses AI to quickly and accurately remove image backgrounds.</p>
+              <p data-i18n="projects.project3Desc">A modern Python desktop application that uses AI to quickly and accurately remove image backgrounds.</p>
+            </a>
+          </div>
+
+          <!-- Project 4 -->
+          <div
+            class="box"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="400"
+          >
+            <a
+              href="https://www.aureamoveis.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="icon">
+                <i class="fas fa-couch"></i>
+              </div>
+              <div class="topic">Áurea Móveis Projetados</div>
+              <p data-i18n="projects.project4Desc">A modern, elegant website developed for a custom planned furniture company, showcasing portfolio galleries, tailored services, and streamlined customer inquiries.</p>
             </a>
           </div>
         </div>
@@ -506,13 +589,13 @@
     <section class="contact" id="contact">
       <div class="content">
         <div class="title" data-aos="fade-up" data-aos-duration="1500">
-          <span>Contact Me</span>
+          <span data-i18n="contact.title">Contact Me</span>
         </div>
         <div class="text">
-          <div class="content">
+          <div class="contact-cards">
             <div
               class="row"
-              data-aos="fade-left"
+              data-aos="fade-up"
               data-aos-duration="1500"
               data-aos-delay="300"
             >
@@ -522,8 +605,8 @@
                   <i class="fas fa-map-marker-alt"></i>
                 </div>
                 <div class="info">
-                  <h3>Address</h3>
-                  <span>Apucarana - PR, Brazil</span>
+                  <h3 data-i18n="contact.addressLabel">Address</h3>
+                  <span data-i18n="contact.addressValue">Apucarana - PR, Brazil</span>
                 </div>
               </div>
 
@@ -533,7 +616,7 @@
                   <i class="fas fa-phone"></i>
                 </div>
                 <div class="info">
-                  <h3>Phone</h3>
+                  <h3 data-i18n="contact.phoneLabel">Phone</h3>
                   <span>+55 (18) 98181-9684</span>
                 </div>
               </div>
@@ -544,33 +627,31 @@
                   <i class="fas fa-envelope"></i>
                 </div>
                 <div class="info">
-                  <h3>Email Address</h3>
+                  <h3 data-i18n="contact.emailLabel">Email Address</h3>
                   <span>diogoaugustosilverio@gmail.com</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <p>
-  Feel free to reach out to me for any <strong>inquiries, collaborations, or professional opportunities</strong>. I am always open to new challenges. You can contact me via <strong>email</strong> or through my <strong>social media</strong>. I look forward to hearing from you!
-</p>
+          <p data-i18n-html="contact.text">
+            Feel free to reach out to me for any <strong>inquiries, collaborations, or professional opportunities</strong>. I am always open to new challenges. You can contact me via <strong>email</strong> or through my <strong>social media</strong>. I look forward to hearing from you!
+          </p>
 
-<div
-  class="button contact-button"
-  data-aos="zoom-in"
-  data-aos-duration="1500"
-  data-aos-delay="300"
->
-  <a
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=diogoaugustosilverio@gmail.com&su=Professional%20Inquiry&body=Hello%20Diogo,"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <button>Let's Chat</button>
-  </a>
-</div>
-
-          
+          <div
+            class="button contact-button"
+            data-aos="zoom-in"
+            data-aos-duration="1500"
+            data-aos-delay="300"
+          >
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=diogoaugustosilverio@gmail.com&su=Professional%20Inquiry&body=Hello%20Diogo,"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button data-i18n="contact.letsChat">Let's Chat</button>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -578,7 +659,7 @@
     <!-- ===== FOOTER ===== -->
     <footer>
       <div class="text">
-        <span
+        <span data-i18n-html="footer.text"
           >Created By
           <a
             href="https://github.com/DiogoSNs"
@@ -609,7 +690,8 @@
       });
     </script>
 
-    <!-- Main Scripts -->
+    <!-- Translations & Main Scripts -->
+    <script src="translations.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
